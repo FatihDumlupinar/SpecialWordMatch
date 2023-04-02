@@ -20,6 +20,12 @@ text = Regex.Replace(text, @"({.*?}|\[.*?\])", match =>
 
 Console.WriteLine(text);
 
+foreach (var item in dictionary)
+{
+    text = text.Replace(item.Value, item.Key);
+}
+
+Console.WriteLine(text);
 
 static string GenerateRandomString(int length)
 {
